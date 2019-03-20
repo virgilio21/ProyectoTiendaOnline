@@ -1,0 +1,58 @@
+﻿@model Tienda.Models.Store
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Store</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Input.DateIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Input.DateIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Max)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Max)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceStore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceStore)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
