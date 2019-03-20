@@ -14,6 +14,7 @@ namespace Tienda.Models
         private OnlineStoreContext db = new OnlineStoreContext();
 
         // GET: Roles
+        //Roles/Index
         public ActionResult Index()
         {
             return View(db.Roles.ToList());
