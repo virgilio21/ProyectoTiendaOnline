@@ -7,9 +7,13 @@
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body >
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,12 +31,38 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
+
+
+
+    
+    <header class="size">
+        <div class="iconoGuayabera">@Html.ActionLink("Diplomatica Yucateca", "Index", "Home")</div>
+        <nav  style="margin:10px;" class="navbar navbar-light ">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <a  style="color:black; font-size: 20px; font-family: 'Francois One', sans-serif; margin:10px;" href="#">Iniciar Sesión</a>
+        <i style="font-size: 30px; margin:10px; margin-left:20%; margin-right:40px;" class="tamanio fas fa-shopping-cart"></i>
+
+
+    </header>
+  <nav class="size">
+   <ul>
+       <li>@Html.ActionLink("Catálogo", "Index", "Producto")</li>
+       <li>@Html.ActionLink("Tallas", "Index", "Sales")</li>
+       <li>@Html.ActionLink("Historia", "Index", "Home")</li>
+   </ul>
+  </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p id="textoFooter">Diplomatica Yucateca @DateTime.Now.Year</p>
+            
         </footer>
     </div>
 

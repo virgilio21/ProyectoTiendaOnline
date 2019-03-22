@@ -1,6 +1,7 @@
 ﻿body {
-    padding-top: 50px;
+   
     padding-bottom: 20px;
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,177 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+.size{
+    max-width:1200px;
+    margin:auto;
+}
+header{
+  
+    display: flex; 
+    flex-direction:row; 
+    flex-wrap:wrap;
+    justify-content:center; 
+    align-items: center;
+    align-content: center; 
+    
+}
+.iconoGuayabera{
+    color:black; 
+    font-size: 35px; 
+    font-family: 'Francois One', sans-serif; 
+    
+    margin-right:8%;
+}
+
+
+
+header h1{
+    color: beige;
+}
+ 
+nav ul {
+   
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+    max-width:1200px;
+    background-color:#a8a8a8;
+   margin-top: 20px;
+   height:35px;
+  
+   padding:0;
+  list-style: none;
+  margin-bottom:0;
+}
+
+nav ul li {
+   
+   
+    
+    text-align:center;
+  
+}
+nav ul li a{
+     text-decoration:none;
+     color:black;
+    font-family: 'Francois One', sans-serif;
+    font-size:20px;
+    padding: 5px 100px;
+}
+a:hover{
+    text-decoration:none;
+    color: #e9e6e6;
+   
+    
+}
+#imagenCarusel1{
+    height: 400px;
+}
+#imagenCarusel2{
+    height: 400px;
+}
+#imagenCarusel3{
+    height: 400px;
+}
+
+#talla{
+    font-family: 'Francois One', sans-serif;
+    text-align:left;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.cajasVideo{
+    
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:center;
+    align-content:center;
+}
+.textoCajas{
+    border: 1px #efefef solid;
+    width:40%;
+    text-align:left;
+    background-color: #efefef;
+    height:330px;
+    box-shadow: 5px 5px 10px #e0dede;
+       
+}
+.txt{
+     font-size:20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-top:50px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.cajasHistoria{
+  
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    align-content:center;
+    margin-top:40px;
+}
+.textoHistoria{
+    border: 1px #efefef solid;
+    width:44%;
+    margin-left:30px;
+    text-align:left;
+    background-color: #efefef;
+    height:310px;
+    box-shadow: 5px 5px 10px #e0dede;
+       
+}
+.tituloHistoria{
+    width:52%;
+   
+
+    text-align:center;
+    font-family: 'Francois One', sans-serif;
+  
+}
+.txt2{
+     font-size:20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-top:50px;
+    padding-left:20px;
+    padding-right:20px;
+}
+#h3Historia{
+   font-size:40px;
+   margin:0;
+   padding:0;
+}
+#h3De{
+    font-size:35px;
+    margin:0;
+    padding:0;
+}
+#h1Guayabera{
+    font-size:50px;
+    margin:0;
+    padding:0;
+}
+footer{
+    background-color:black;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:flex-end;
+    align-items:flex-end;
+    align-content:flex-end;
+    height:80px;
+}
+#textoFooter{
+    font-family: 'Francois One', sans-serif;
+    color:white;
+    text-align:right;
+    margin-right:30px;
 }
