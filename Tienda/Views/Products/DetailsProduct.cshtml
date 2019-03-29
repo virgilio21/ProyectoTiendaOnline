@@ -1,0 +1,67 @@
+﻿@model Tienda.Models.Product
+
+@{
+    ViewBag.Title = "DetailsProduct";
+}
+
+<h1 class="text-center margen-bajo"> Detalles del producto </h1>
+
+
+<section class="producto container">
+    <div class="parte-izquierda">
+
+        <figure class="detalles">
+
+            <img class="cartas" src="~/Content/images/guayabera.jpg" alt="Foto de la prenda" />
+        </figure>
+
+    </div>
+
+    <div class="parte-derecha">
+
+        <h1 class="text-center">@Html.DisplayFor(model => model.Name)</h1>
+
+        <h2 class="rojo">@Html.DisplayFor(model => model.Price)</h2>
+
+        <!--Esta parte de el enlace esta nada mas por poner por que no hay metodo, la accion de ese botom le tocaria programarlo
+            al que le haya tocado el carrito-->
+        <a href="#" class="especial">Agregar al carrito</a>
+
+
+
+        <h3>Descripcion</h3>
+        <p> @Html.DisplayFor(model => model.DescriptionProduct)</p>
+
+        <div class="contenedor-ul">
+            <h4>Tamaño:</h4>
+            <ul>
+                <li>@Html.DisplayFor(model => model.Size)</li>
+            </ul>
+
+            <h4>Color:</h4>
+            <ul>
+                <li>
+                    @Html.DisplayFor(model => model.Color)
+                </li>
+            </ul>
+
+            <h4>Modelo:</h4>
+            <ul>
+                <li>
+                    @Html.DisplayFor(model => model.Model)
+
+                </li>
+            </ul>
+
+            <h4>Genero:</h4>
+            <ul>
+                <li>
+                    @Html.DisplayFor(model => model.Gender)
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</section>

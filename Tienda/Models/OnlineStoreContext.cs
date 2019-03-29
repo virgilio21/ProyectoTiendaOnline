@@ -8,6 +8,12 @@ namespace Tienda.Models
 {
     public class OnlineStoreContext:DbContext
     {
+
+        public OnlineStoreContext()
+        {
+            Database.SetInitializer<OnlineStoreContext>(new DropCreateDatabaseIfModelChanges<OnlineStoreContext>());
+        }
+
         public DbSet<Input> Inputs { get; set; }
         public DbSet<Output> Outputs { get; set; }
 

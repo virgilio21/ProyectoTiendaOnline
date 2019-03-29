@@ -123,5 +123,25 @@ namespace Tienda.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //Mis controladores
+        public ActionResult Catalog()
+        {
+            return View(db.Products.ToList());
+        }
+
+        public ActionResult DetailsProduct(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
     }
 }
