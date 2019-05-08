@@ -25,7 +25,12 @@
 
         <!--Esta parte de el enlace esta nada mas por poner por que no hay metodo, la accion de ese botom le tocaria programarlo
             al que le haya tocado el carrito de compra-->
-        <a href="#" class="especial">Agregar al carrito</a>
+        @*<a id="agregar"  onclick="agregar()" class="especial">Agregar al carrito</a>*@
+
+        <a>
+            @Html.ActionLink("Agregar al carrito", "Add", new { id = Model.Id })
+        </a>
+
 
 
 

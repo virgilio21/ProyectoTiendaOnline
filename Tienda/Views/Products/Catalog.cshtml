@@ -1,36 +1,36 @@
 ﻿@model IEnumerable<Tienda.Models.Product>
 
-@{
+    @{
     /**/
 
     ViewBag.Title = "Catalog";
-}
+    }
 
-<h1 class="text-center margen-bajo"> Catalogo de productos</h1>
+    <h1 class="text-center margen-bajo"> Catalogo de productos</h1>
 
     <section id="cards" class="">
         <div class="container">
             <div class="row">
                 @foreach (var item in Model)
                 {
-                    <div class="col-lg-3 col-md-6 col-12">
+                <div class="col-lg-3 col-md-6 col-12">
 
-                        <div class="card">
-                            <img src="https://camasha.com/image/cache/catalog/Productos/guayabera-PRESID-CGLML-MARINO-470x700.jpg" class="card-img-top cartas" alt="face-perfil">
-                            <div class="card-body">
-                                <h5 class="card-title">Nombre: @Html.DisplayFor(modelItem => item.Name)</h5>
-                                <p class="card-text">Precio: @Html.DisplayFor(modelItem => item.Price)</p>
-                                <p class="card-text"> Genero: @Html.DisplayFor(modelItem => item.Gender)</p>
+                    <div class="card">
+                        <img src="https://camasha.com/image/cache/catalog/Productos/guayabera-PRESID-CGLML-MARINO-470x700.jpg" class="card-img-top cartas" alt="face-perfil">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre: @Html.DisplayFor(modelItem => item.Name)</h5>
+                            <p class="card-text">Precio: @Html.DisplayFor(modelItem => item.Price)</p>
+                            <p class="card-text"> Genero: @Html.DisplayFor(modelItem => item.Gender)</p>
 
-                                
-                                @Html.ActionLink("Conoce más", "DetailsProduct", new { id = item.Id },new { @class = "btn btn-success" })
-                                
-                        
-                                
-                            </div>
+
+                            @Html.ActionLink("Conoce más", "DetailsProduct", new { id = item.Id },new { @class = "btn btn-success" })
+
+
+
                         </div>
                     </div>
-                 }
+                </div>
+                }
             </div>
         </div>
     </section>

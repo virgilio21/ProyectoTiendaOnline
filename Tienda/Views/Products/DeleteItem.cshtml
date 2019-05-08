@@ -1,0 +1,73 @@
+﻿@model Tienda.Models.Product
+
+@{
+    ViewBag.Title = "Quitar Producto";
+}
+
+<h2>Quitar Producto</h2>
+
+<h3>¿Desea quitar "@Html.DisplayFor(model => model.Name)" del Carrito?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Precio:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Descripción:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionProduct)
+        </dd>
+
+        <dt>
+            Talla:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            Color:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            Modelo:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            Genero:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Quitar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar al carrito", "Cart")
+        </div>
+    }
+</div>

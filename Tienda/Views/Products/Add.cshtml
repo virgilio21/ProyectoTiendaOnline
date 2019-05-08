@@ -1,0 +1,67 @@
+﻿@model Tienda.Models.Product
+
+@{
+    ViewBag.Title = "Agregado al Carrito!";
+}
+
+<h2>Agregado "@Html.DisplayFor(model => model.Name)" al carrito!</h2>
+
+<div>
+    <h4>Información del producto:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Precio:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Descripción:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionProduct)
+        </dd>
+
+        <dt>
+            Talla:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            Color:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            Modelo:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            Genero:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Seguir comprando", "Catalog")|
+    @Html.ActionLink("Pagar", "Cart")
+</p>

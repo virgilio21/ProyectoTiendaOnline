@@ -143,5 +143,91 @@ namespace Tienda.Controllers
             }
             return View(product);
         }
+
+
+        //Carrito
+        public ActionResult Add(int id)
+        {
+            Product product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (Session["first"] == null)
+            {
+                Session["first"] = "false";
+                List<int> cart = new List<int>();
+                cart.Add(id);
+                Session["cart"] = cart;
+
+                
+            }
+            else if (Session["first"].Equals("false"))
+            {
+                List<int> cart = Session["cart"] != null ? (List<int>)Session["cart"] : null;
+                cart.Add(id);
+                Session["cart"] = cart;
+                
+                foreach (var item in cart)
+                {
+                    Product p = db.Products.Find(item);
+
+
+                }
+                
+            }
+            return View(product);
+        }
+
+        public ActionResult Cart()
+        {
+
+            List<Product> carrito = new List<Product>();
+
+            if (Session["first"] != null)
+            {
+                decimal subTotal = 0;
+                List<int> cart = Session["cart"] != null ? (List<int>)Session["cart"] : null;
+
+                foreach (var item in cart)
+                {
+                    Product p = db.Products.Find(item);
+                    subTotal += p.Price;
+                    carrito.Add(p);
+                }
+
+                Session["subTotal"] = subTotal;
+            }
+
+            return View(carrito);
+        }
+
+        // GET: Products/DeleteItem
+        public ActionResult DeleteItem(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = db.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+
+        // POST: Products/DeleteItem
+        [HttpPost, ActionName("DeleteItem")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteItemConfirmed(int id)
+        {
+            List<int> cart = Session["cart"] != null ? (List<int>)Session["cart"] : null;
+            cart.Remove(id);
+            Session["cart"] = cart;
+            return RedirectToAction("Cart");
+        }
+
     }
 }
